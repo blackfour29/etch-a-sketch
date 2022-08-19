@@ -33,6 +33,9 @@ body{
   grid-template-columns: repeat(16, 1fr);
   /* border: solid 1px black; */
   box-sizing: border-box;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
   
 }
 
@@ -108,10 +111,11 @@ input[type="range"]::-webkit-slider-runnable-track:hover{
 
 /* Color input */
 
-.options--color-container{
+.options--brush-color-container{
   margin-top: 1em;
   display: flex;
   align-items: center;
+  
 }
 
 .pcr-button{
