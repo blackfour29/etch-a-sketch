@@ -18,54 +18,63 @@
   </header>
 
 <div class="container">
-  <div class="grid">
+  <div class="grid" draggable="false">
 
   </div>
   <div class="options">
     <h3 class="options--title">Options</h3>
 
     <div class="options--range-container option-row">
-      <label for="range" class="range-label">16</label>
-      <input type="range" id="range" min="1" max="50" step="1">
+      <label for="range" class="range-label"></label>
+      <input type="range" id="range" value="16" min="1" max="50" step="1">
     </div>
 
-    <div class="options--color-container option-row">
-      <p class="brush-label">Brush color: </p>
+    <div class="options--brush-color-container option-row">
+      <p class="brush-color-label">Brush color: </p>
       <div class="color-picker"></div>
     </div>
 
+    <div class="options--brush option-row">
+      <label class="brush-label" for="brush">Brush</label>
+      <input type="checkbox" class="options--checkbox brush-checkbox" name="brush" id="brush">
+    </div>
+    
     <div class="options--rainbow-brush-container option-row">
       <label class="rainbow-brush-label" for="rainbow-brush">Rainbow-brush</label>
-      <input type="checkbox" name="rainbow-brush" id="rainbow-brush">
+      <input type="checkbox" class="options--checkbox rainbow-checkbox" name="rainbow-brush" id="rainbow-brush">
     </div>
 
     <div class="options--eraser option-row">
       <p class="eraser-label">Eraser</p>
-      <input type="checkbox" name="">
+      <input type="checkbox" class="options--checkbox eraser-checkbox" name="">
     </div>
 
     <div class="options--darken option-row">
       <p class="darken-label">Darken</p>
-      <input type="checkbox" name="">
+      <input type="checkbox" class="options--checkbox darken-checkbox" name="">
     </div>
 
     <div class="options--lighten option-row">
       <p class="lighten-label">Lighten</p>
-      <input type="checkbox" name="">
+      <input type="checkbox" class="options--checkbox lighten-checkbox" name="">
+    </div>
+
+    <div class="options--color-pick option-row">
+      <p class="grid-lines-label">Color pick</p>
+      <input type="checkbox" class="options--checkbox color-pick-checkbox" name="">
     </div>
 
     <div class="options--grid-lines option-row">
       <p class="grid-lines-label">Grid lines</p>
-      <input type="checkbox" name="">
+      <input type="checkbox" class="grid-lines-checkbox" name="" >
     </div>
+
 
   </div>
 </div>
 
-
-<!-- <div class="test-box"></div> -->
-
-<script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.js"></script>
+  <script src="ui.js"></script>
   <script src="script.js"></script>
 </body>
 
