@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Etch-A-Sketch</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/classic.min.css"/> <!-- 'classic' theme -->
+
+  <link rel="stylesheet" href="styles.css">
+  
+</head>
+
+<body>
+
+  <header>
+    <h1 class="title">Etch-A-Sketch</h1>
+  </header>
+
+<div class="container">
+  <div class="grid">
+
+  </div>
+  <div class="options">
+    <h3 class="options--title">Options</h3>
+
+    <div class="options--range-container option-row">
+      <label for="range" class="range-label">16</label>
+      <input type="range" id="range" min="1" max="50" step="1">
+    </div>
+
+    <div class="options--color-container option-row">
+      <p class="brush-label">Brush color: </p>
+      <div class="color-picker"></div>
+    </div>
+
+    <div class="options--rainbow-brush-container option-row">
+      <label class="rainbow-brush-label" for="rainbow-brush">Rainbow-brush</label>
+      <input type="checkbox" name="rainbow-brush" id="rainbow-brush">
+    </div>
+
+    <div class="options--eraser option-row">
+      <p class="eraser-label">Eraser</p>
+      <input type="checkbox" name="">
+    </div>
+
+    <div class="options--darken option-row">
+      <p class="darken-label">Darken</p>
+      <input type="checkbox" name="">
+    </div>
+
+    <div class="options--lighten option-row">
+      <p class="lighten-label">Lighten</p>
+      <input type="checkbox" name="">
+    </div>
+
+    <div class="options--grid-lines option-row">
+      <p class="grid-lines-label">Grid lines</p>
+      <input type="checkbox" name="">
+    </div>
+
+  </div>
+</div>
+
+
+<!-- <div class="test-box"></div> -->
+
+<script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>

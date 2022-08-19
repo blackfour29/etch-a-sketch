@@ -1,0 +1,160 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+:root{
+  --primary-color: #03a9f4;
+}
+
+body{
+  background-color: #3aafa986;
+}
+
+.container{
+  width: 80%;
+  max-width: 1300px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+}
+
+.title{
+  text-align: center;
+  font-size: 3em;
+  margin: 0.25em 0 0.5em 0;
+}
+
+.grid{
+  display: grid;
+  width: 500px;
+  height: 500px;
+  grid-template-rows: repeat(16, 1fr);
+  grid-template-columns: repeat(16, 1fr);
+  /* border: solid 1px black; */
+  box-sizing: border-box;
+  
+}
+
+.square{
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  /* box-sizing: border-box; */
+  border: solid 1px black;
+}
+
+.options{
+  display: flex;
+  flex-direction: column;
+}
+
+.options--title{
+  text-align: center;
+  margin-bottom: 3.5em;
+}
+
+.options--range-container{
+  position: relative;
+}
+
+.option-row{
+  display: flex;
+  margin-top: 1em;
+  justify-content: space-between;
+}
+
+/* range input */
+
+input[type="range"] {
+  -webkit-appearance: none;
+  background-color: #ffffff;
+  width: 150px;
+  height: 5px;
+  border-radius: 5px;
+  margin: 0 auto;
+  outline: 0;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  background-color: var(--primary-color);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-runnable-track:hover{
+  cursor: pointer;
+}
+
+.range-label{
+  font-size: 1.25em;
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform:translate(-50%, 0);
+  width: 70px;
+  height: 26px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+
+/* Color input */
+
+.options--color-container{
+  margin-top: 1em;
+  display: flex;
+  align-items: center;
+}
+
+.pcr-button{
+  margin-right: 10px;
+}
+
+/* Checkbox inputs */
+
+.options--rainbow-brush-container{
+  display: flex;
+  align-items: center;
+}
+
+input[type="checkbox"]{
+  position:relative;
+  width: 40px;
+  height: 20px;
+  -webkit-appearance: none;
+  background-color: lightgrey;
+  border-radius: 20px;
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+  transition: 500ms;
+  /* outline: none; */
+  cursor: pointer;
+}
+
+input:checked[type="checkbox"]{
+  background-color: var(--primary-color);
+}
+
+input[type="checkbox"]:before{
+  content:'';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  top: 0;
+  left: 0;
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  transition: 500ms;
+}
+
+input:checked[type="checkbox"]:before{
+  left:20px;
+}
