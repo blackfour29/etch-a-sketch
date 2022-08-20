@@ -6,7 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Etch-A-Sketch</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/classic.min.css"/> <!-- 'classic' theme -->
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400;500;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   
 </head>
@@ -30,52 +32,60 @@
     </div>
 
     <div class="options--brush-color-container option-row">
-      <p class="brush-color-label">Brush color: </p>
+      <p class="options--unclickable-label brush-color-label">Brush color: </p>
       <div class="color-picker"></div>
     </div>
 
     <div class="options--brush option-row">
-      <label class="brush-label" for="brush">Brush</label>
+      <label class="options--unclickable-label brush-label" for="brush">Brush</label>
       <input type="checkbox" class="options--checkbox brush-checkbox" name="brush" id="brush">
     </div>
     
     <div class="options--rainbow-brush-container option-row">
-      <label class="rainbow-brush-label" for="rainbow-brush">Rainbow-brush</label>
+      <label class="options--unclickable-label rainbow-brush-label" for="rainbow-brush">Rainbow brush</label>
       <input type="checkbox" class="options--checkbox rainbow-checkbox" name="rainbow-brush" id="rainbow-brush">
     </div>
 
     <div class="options--eraser option-row">
-      <p class="eraser-label">Eraser</p>
+      <label class="options--unclickable-label eraser-label">Eraser</label>
       <input type="checkbox" class="options--checkbox eraser-checkbox" name="">
     </div>
 
     <div class="options--darken option-row">
-      <p class="darken-label">Darken</p>
+      <label class="options--unclickable-label darken-label">Darken</label>
       <input type="checkbox" class="options--checkbox darken-checkbox" name="">
     </div>
 
     <div class="options--lighten option-row">
-      <p class="lighten-label">Lighten</p>
+      <label class="options--unclickable-label lighten-label">Lighten</label>
       <input type="checkbox" class="options--checkbox lighten-checkbox" name="">
     </div>
 
     <div class="options--color-pick option-row">
-      <p class="grid-lines-label">Color pick</p>
+      <label class="options--unclickable-label grid-lines-label">Color pick</label>
       <input type="checkbox" class="options--checkbox color-pick-checkbox" name="">
     </div>
 
     <div class="options--grid-lines option-row">
-      <p class="grid-lines-label">Grid lines</p>
+      <label class="options--unclickable-label grid-lines-label">Grid lines</label>
       <input type="checkbox" class="grid-lines-checkbox" name="" >
     </div>
 
+    <button class="clear-button">Clear Grid</button>
 
   </div>
 </div>
-
   <script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.js"></script>
-  <script src="ui.js"></script>
-  <script src="script.js"></script>
+  <!-- <script src="color-picker.js"></script> -->
+  <script src="scripts/color-picker.js"></script>
+  <!-- <script src="utils.js"></script> -->
+  <script src="scripts/utils.js"></script>
+  <!-- <script src="tools.js"></script> -->
+  <script src="scripts/tools.js"></script>
+  <!-- <script src="ui.js"></script> -->
+  <script src="scripts/ui.js"></script>
+  <!-- <script src="script.js"></script> -->
+  <script src="scripts/script.js"></script>
 </body>
 
 </html>
