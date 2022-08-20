@@ -20,6 +20,9 @@ let mousePressed = false;
 brushCb.checked = true; 
 gridLinesCb.checked = true;
 
+
+////////// Event listeners
+
 window.addEventListener("load", displayNewGrid);
 
 rangeEl.addEventListener("change", function(event){
@@ -32,10 +35,10 @@ rangeEl.addEventListener("input", function(event) {
   updateRangeLabel(gridSize);
 });
 
-gridEl.addEventListener("mousedown", startColoringMode);
-gridEl.addEventListener("mouseup", stopColoringMode);
-gridEl.addEventListener("mouseleave", stopColoringMode)
-gridEl.addEventListener("mouseover", color)
+gridEl.addEventListener("mousedown", startUsingTool);
+gridEl.addEventListener("mouseup", stopUsingTool);
+gridEl.addEventListener("mouseleave", stopUsingTool)
+gridEl.addEventListener("mouseover", useTool)
 
 brushCb.addEventListener("change", toggleBrush);
 
@@ -55,6 +58,11 @@ clearBtn.addEventListener("click", function(event){
   let gridSize = rangeEl.value;
   displayNewGrid(event, gridSize);
 });
+
+
+
+
+////////// Logic
 
 function toggleGridLines()
 {
@@ -81,10 +89,10 @@ function turnOffCheckboxesExcept(node)
   })
 }
 
-function startColoringMode(event)
+function startUsingTool(event)
 {
   mousePressed = true;
-  color(event);
+  useTool(event);
 }
 
 function displayNewGrid(event, size=16){
@@ -93,7 +101,7 @@ function displayNewGrid(event, size=16){
   updateRangeLabel(size);
 }
 
-function color(event)
+function useTool(event)
 {
   if(mousePressed)
   {
@@ -102,7 +110,6 @@ function color(event)
     else if(currentTool === "rainbow-brush")
       event.target.style.backgroundColor = getRandomColor();
     else if(currentTool === "eraser")
-      // event.target.style.cssText = '';  
       event.target.style.backgroundColor = "#fff";
     else if(currentTool === "darken")
       event.target.style.backgroundColor = changeShade("darken", event.target.style.backgroundColor);
@@ -123,7 +130,7 @@ function color(event)
   }
 }
 
-function stopColoringMode()
+function stopUsingTool()
 {
   mousePressed = false;
 }
