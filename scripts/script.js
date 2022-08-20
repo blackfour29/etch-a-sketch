@@ -16,7 +16,9 @@ let brushColor = "#42445A";
 let currentTool = "brush";
 let mousePressed = false;
 
-brushCb.checked = true; // brush should be on by default
+// brush and grid lines should be on by default
+brushCb.checked = true; 
+gridLinesCb.checked = true;
 
 window.addEventListener("load", displayNewGrid);
 
@@ -57,13 +59,13 @@ clearBtn.addEventListener("click", function(event){
 function toggleGridLines()
 {
   let gridSquares = document.querySelectorAll(".square");
-  if(gridLinesCb.checked)
+  if(!gridLinesCb.checked)
   {
     gridSquares.forEach(square => {
       square.style.border="none";
     })
   }
-  else if(!gridLinesCb.checked)
+  else if(gridLinesCb.checked)
   {
     gridSquares.forEach(square => {
       square.style.border = "solid 1px black";
@@ -100,7 +102,8 @@ function color(event)
     else if(currentTool === "rainbow-brush")
       event.target.style.backgroundColor = getRandomColor();
     else if(currentTool === "eraser")
-      event.target.style.cssText = '';  
+      // event.target.style.cssText = '';  
+      event.target.style.backgroundColor = "#fff";
     else if(currentTool === "darken")
       event.target.style.backgroundColor = changeShade("darken", event.target.style.backgroundColor);
     else if(currentTool === "lighten")
@@ -112,7 +115,6 @@ function color(event)
       {
         brushColor = color;
         colorPickerBtn.style.setProperty('--pcr-color', `${color}`)
-        // turnOnBrush();
         switchToolToBrush(color);
       }
     }
@@ -128,6 +130,7 @@ function stopColoringMode()
 
 function switchToolToBrush(color)
 {
+  color = color || brushColor;
   brushColor = color;
   currentTool = "brush";
   turnOffCheckboxesExcept(brushCb);

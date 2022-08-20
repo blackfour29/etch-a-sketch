@@ -14,6 +14,9 @@ function turnOnRainbowBrush()
     currentTool = "rainbow-brush";
     turnOffCheckboxesExcept(rainbowCB);
   }
+  else
+    switchToolToBrush();
+  
 }
 
 function turnOnEraser()
@@ -23,6 +26,8 @@ function turnOnEraser()
     currentTool = "eraser";
     turnOffCheckboxesExcept(eraserCB);
   }
+  else
+    switchToolToBrush();
 }
 
 function turnOnDarken()
@@ -32,6 +37,8 @@ function turnOnDarken()
     currentTool = "darken";
     turnOffCheckboxesExcept(darkenCB);
   }
+  else
+    switchToolToBrush();
 }
 
 function turnOnLighten()
@@ -42,11 +49,8 @@ function turnOnLighten()
     currentTool = "lighten";
     turnOffCheckboxesExcept(lightenCb);
   }
-  else if(!lightenCb.checked)
-  {
-    currentTool = "brush";
-    brushCb.checked = true;
-  }
+  else
+    switchToolToBrush();
 }
 
 
@@ -77,11 +81,13 @@ function turnOnColorPick()
     currentTool = "color-pick";
     turnOffCheckboxesExcept(colorPickCb);
   } 
+  else
+    switchToolToBrush();
 }
 
-function turnOnBrush()
-{
-  currentTool = "brush";
-  brushCb.checked = true;
-  turnOffCheckboxesExcept(brushCb);
-}
+// function turnOnBrush()
+// {
+//   currentTool = "brush";
+//   brushCb.checked = true;
+//   turnOffCheckboxesExcept(brushCb);
+// }
