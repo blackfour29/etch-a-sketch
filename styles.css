@@ -181,7 +181,7 @@ input:checked[type="checkbox"]:before{
 }
 
 .clear-button{
-  background-color: var(--primary-color) ;
+  background-color: rgb(229, 54, 54) ;
   border: none;
   color: white;
   min-width: 5em;
@@ -195,7 +195,7 @@ input:checked[type="checkbox"]:before{
 }
 
 .clear-button:hover{
-  background-color: #035277; 
+  background-color: rgb(171, 63, 63); 
 }
 
 
