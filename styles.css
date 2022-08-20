@@ -29,6 +29,8 @@ body{
   text-align: center;
   font-size: 3em;
   margin: 0.5em 0 0.75em 0;
+  letter-spacing: 2px;
+  word-spacing: 15px;
 }
 
 .grid{
