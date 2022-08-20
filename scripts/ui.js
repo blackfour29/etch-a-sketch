@@ -17,6 +17,7 @@ function renderNewGrid(size=16)
   {
     const square = document.createElement("div");
     square.classList.add("square");
+    gridLinesCb.checked = true;
     gridEl.appendChild(square);
   }
 }
