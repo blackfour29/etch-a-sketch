@@ -110,20 +110,17 @@ function useTool(event)
     else if(currentTool === "rainbow-brush")
       event.target.style.backgroundColor = getRandomColor();
     else if(currentTool === "eraser")
-      event.target.style.backgroundColor = "#fff";
+      event.target.style.backgroundColor = "#ffffff";
     else if(currentTool === "darken")
       event.target.style.backgroundColor = changeShade("darken", event.target.style.backgroundColor);
     else if(currentTool === "lighten")
       event.target.style.backgroundColor = changeShade("lighten" , event.target.style.backgroundColor);
     else if(currentTool === "color-pick")
     {
-      let color = event.target.style.backgroundColor;
-      if(color)
-      {
-        brushColor = color;
-        colorPickerBtn.style.setProperty('--pcr-color', `${color}`)
-        switchToolToBrush(color);
-      }
+      let color = getComputedStyle(event.target).getPropertyValue("background-color");
+      brushColor = color;
+      colorPickerBtn.style.setProperty('--pcr-color', `${color}`)
+      switchToolToBrush(color);
     }
     else
       return;

@@ -84,10 +84,3 @@ function turnOnColorPick()
   else
     switchToolToBrush();
 }
-
-// function turnOnBrush()
-// {
-//   currentTool = "brush";
-//   brushCb.checked = true;
-//   turnOffCheckboxesExcept(brushCb);
-// }
