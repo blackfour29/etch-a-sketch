@@ -189,7 +189,7 @@ input:checked[type="checkbox"]:before{
   min-width: 5em;
   padding: 0.5em 1.25em;
   border-radius: 0.25em;
-  margin: 1em auto 0 auto;
+  margin: 1em auto 1em auto;
   cursor: pointer;
   font-family: inherit;
   font-size: 1em;
