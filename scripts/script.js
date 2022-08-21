@@ -117,6 +117,11 @@ function useTool(event)
       event.target.style.backgroundColor = changeShade("lighten" , event.target.style.backgroundColor);
     else if(currentTool === "color-pick")
     {
+      // using event.target.style.backgroundColor would produce a bug in this case if it's used to read the color of the clicked square. That is because it only returns the inline styles of the element, which on the initial render of the grid are none, unlike in the other cases. To work around that, i read the computed styles instead and target the background-color property. 
+      // note: the argument passed to getPropertyValue has to match exactly the property name from the computed styles. Camelcasing or the css property name will not work (backgroundColor / "background color")
+
+      //let color = event.target.style.backgroundColor; - bug
+
       let color = getComputedStyle(event.target).getPropertyValue("background-color");
       brushColor = color;
       colorPickerBtn.style.setProperty('--pcr-color', `${color}`)

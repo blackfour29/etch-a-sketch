@@ -54,3 +54,7 @@ pickr.on("hide", instance => {
   switchToolToBrush(chosenColor);
  
 })
+
+pickr.on('save', (color, instance) => {
+  pickr.hide();
+} )
